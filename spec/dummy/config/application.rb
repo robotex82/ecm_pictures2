@@ -10,6 +10,7 @@ require "sprockets/railtie"
 
 Bundler.require(*Rails.groups)
 # require 'active_admin'
+require 'twitter-bootstrap-rails'
 require 'devise'
 require "ecm_pictures2"
 

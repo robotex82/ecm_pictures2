@@ -11,6 +11,8 @@ ActiveAdmin.register Ecm::Pictures::PictureGallery do
                 :position,
                 pictures_attributes: [
                   :description,
+                  :_destroy,
+                  :id,
                   :image,
                   :markup_language,
                   :name,

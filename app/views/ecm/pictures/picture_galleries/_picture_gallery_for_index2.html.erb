@@ -1,0 +1,12 @@
+<div class="col-sm-6 col-md-3">
+  <div class="thumbnail">
+    <% if picture_gallery.pictures.first.respond_to?(:image) %>
+      <%= image_tag picture_gallery.pictures.first.image.url(:default_thumb) %>
+    <% end %>
+    <div class="caption">
+      <h3><%= picture_gallery.name %></h3>
+      <p><%= mu(picture_gallery, :description) %></p>
+      <p><%= link_to t('ecm.pictures.actions.view'), picture_gallery, :class => 'btn btn-primary', :role => 'button' %></p>
+    </div>
+  </div>
+</div>

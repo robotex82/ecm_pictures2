@@ -1,11 +1,14 @@
 <h1><%= @picture.to_s %></h1>
 
-<p>
-  <div class="row">
-    <%= render @picture %>
+<div class="row">
+  <%= render @picture %>
+</div>
+
+<div class="actions well">
+  <div class="page-actions">
+    <div class="btn-group" role="group">
+      <%= link_to(@picture.picture_gallery, @picture.picture_gallery, :class => 'btn btn-primary') if @picture.picture_gallery.present? %>
+      <%= link_to t('back'), :back, class: 'btn btn-default' %>
+    </div>
   </div>
-</p>
-
-<p><%= link_to @picture.picture_gallery, @picture.picture_gallery, :class => 'btn' %></p>
-
-<p><%= link_to t('back'), :back %></p>
+</div>
