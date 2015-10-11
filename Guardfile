@@ -1,7 +1,7 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
-guard 'rails', root: 'spec/dummy' do
+guard 'rails', root: 'spec/dummy', CLI: 'rails server --pid tmp/pids/[RAILS_ENV].pid -b 0.0.0.0' do
   watch('Gemfile.lock')
   watch(%r{^(config|lib)/.*(^\.rake)})
 end

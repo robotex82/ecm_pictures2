@@ -8,7 +8,15 @@ ActiveAdmin.register Ecm::Pictures::PictureGallery do
                 :markup_language,
                 :name,
                 :pictures_attributes,
-                :position
+                :position,
+                pictures_attributes: [
+                  :description,
+                  :image,
+                  :markup_language,
+                  :name,
+                  :picture_gallery_id,
+                  :position
+                ]
 
   config.sort_order = 'position'
   sortable_member_actions

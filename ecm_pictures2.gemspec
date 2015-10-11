@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'RedCloth'
 
   # Dummy app
+  s.add_development_dependency 'rails-dummy'
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "twitter-bootstrap-rails"
   s.add_development_dependency 'devise'

@@ -19,7 +19,7 @@ GIT
 PATH
   remote: .
   specs:
-    ecm_pictures2 (2.1.0.pre)
+    ecm_pictures2 (1.0.0)
       RedCloth
       acts_as_list
       acts_as_markup
@@ -231,6 +231,8 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
+    rails-dummy (0.0.4)
+      rails
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
     railties (4.2.4)
@@ -330,6 +332,7 @@ DEPENDENCIES
   guard-rspec
   jquery-rails
   less-rails
+  rails-dummy
   rspec-rails
   sass-rails
   shoulda-matchers
