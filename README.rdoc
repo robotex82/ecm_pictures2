@@ -1,0 +1,69 @@
+= Ecm::Pictures 2
+
+= Purpose
+
+Create and administrate picture galleries in active admin and display them on
+in your ruby on rails applictation. Orangebox is used for lightbox support.
+
+# Prerequisites
+
+  * Ruby on Rails 4.x
+  * Twitter Bootstrap 3
+
+= Features
+
+  * Drop in module for active admin.
+  * Render a gallery with one method call in your views.
+  * Lightbox support.
+  * Picture and Gallery sorting.
+
+
+= Installation
+
+
+Add it to your gemfile:
+
+  # Gemfile
+  gem 'ecm_pictures2'
+
+Install your bundle:
+
+  > bundle install
+
+Generate initializer:
+
+  > rails generate ecm:pictures:install
+
+Generatre the migrations:
+
+  > rake ecm_pictures_engine:install:migrations
+
+Migrate:
+
+  > rake db:migrate
+
+
+== Optional: Generate locale files
+
+You may want to copy the locales to your app:
+
+  > rails generate ecm:pictures:locales
+
+= Usage
+
+You can administrate your pictures and picture galleries in active admin.
+
+Once you have a gallery, you can display it like this:
+
+  <%= render_picture_gallery 'Holidays 2012' %>
+
+= Todo
+
+  * Tests, tests, tests.
+  * Better docs.
+  * Render picture helpers.
+  * Add a published flag to galleries and pictures.
+
+= License
+
+This project rocks and uses MIT-LICENSE.
