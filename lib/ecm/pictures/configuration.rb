@@ -17,24 +17,12 @@ module Ecm
         nil
       end
 
-      mattr_accessor :picture_css_classes do
-        'picture span3'
-      end
-
-      mattr_accessor :picture_for_gallery_css_classes do
-        'picture span4'
-      end
-
-      mattr_accessor :picture_gallery_preview_div_css_classes do
-        'thumbnail'
-      end
-
-      mattr_accessor :picture_gallery_preview_li_css_classes do
-        'span4'
-      end
-
-      mattr_accessor :picture_image_styles do
+      mattr_accessor :paperclip_options do
         {}
+      end
+
+      mattr_accessor :base_controller do
+        'ApplicationController'
       end
 
       def picture_image_styles=(picture_image_styles)

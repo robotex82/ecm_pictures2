@@ -27,12 +27,6 @@ PATH
       paperclip
       rails (>= 4.0, < 5.0)
 
-PATH
-  remote: ~/rails/modules/active_admin-acts_as_list
-  specs:
-    active_admin-acts_as_list (0.0.7)
-      rails (>= 3.2, < 5.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -320,7 +314,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_admin-acts_as_list!
   activeadmin!
   capybara
   coffee-rails

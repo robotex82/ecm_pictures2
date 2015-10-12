@@ -19,7 +19,7 @@ gem "jquery-rails"
 # Edge active admin
 gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git'
 
-gem 'active_admin-acts_as_list', path: '~/rails/modules/active_admin-acts_as_list'
+# gem 'active_admin-acts_as_list', path: '~/rails/modules/active_admin-acts_as_list'
 
 unless ENV['TRAVIS_RUBY_VERSION'].nil?
   gem 'pg'

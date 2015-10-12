@@ -10,6 +10,6 @@ en:
         pictureable: attached to
         created_at: created at
         updated_at: updated at
-  resources:
+  routes:
     ecm_pictures_pictures: attached-pictures
 

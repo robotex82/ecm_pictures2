@@ -28,8 +28,7 @@ class Ecm::Pictures::Picture < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, :use => [:slugged, :finders]
   # paperclip
-  has_attached_file :image,
-                    :styles => Ecm::Pictures::Configuration.picture_image_styles
+  has_attached_file :image, Ecm::Pictures::Configuration.paperclip_options
 
   # validations
   validates :image, :attachment_presence => true

@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   # Module dependencies
   s.add_dependency "acts_as_list"
   s.add_dependency "acts_as_markup"
-  # s.add_dependency "active_admin-acts_as_list"
+  s.add_dependency "active_admin-acts_as_list", "~> 0.0.8"
   s.add_dependency "friendly_id"
   s.add_dependency "paperclip"
   s.add_dependency 'RedCloth'

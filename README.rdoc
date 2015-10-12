@@ -34,7 +34,16 @@ Generate initializer:
 
   > rails generate ecm:pictures:install
 
-Generatre the migrations:
+Add the routes to your config/routes.rb:
+
+  Rails.application.routes.draw do
+    .
+    .
+    .
+    Ecm::Pictures::Routing.routes(self)
+  end
+
+Generate the migrations:
 
   > rake ecm_pictures_engine:install:migrations
 

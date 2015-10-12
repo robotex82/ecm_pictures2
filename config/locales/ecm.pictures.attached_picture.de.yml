@@ -10,6 +10,6 @@ de:
         pictureable: Verknüpft mit
         created_at: Erstellt am
         updated_at: Aktualisiert am
-  resources:
+  routes:
     ecm_pictures_pictures: verknuepfte-bilder
 
