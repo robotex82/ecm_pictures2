@@ -9,10 +9,7 @@ module Ecm::Pictures
             p.input :name
             p.input :image, :as => :file, :hint => p.template.image_tag(p.object.image.url(:default_thumb))
             p.input :description
-
-            p.inputs do
-              p.input :markup_language, :as => :select, :collection => Ecm::Pictures::Configuration.markup_languages
-            end # p.inputs
+            p.input :markup_language, :as => :select, :collection => Ecm::Pictures::Configuration.markup_languages
           end # f.has_many :pictures
         end # f.inputs
 
