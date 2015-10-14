@@ -25,9 +25,9 @@ module Ecm
         'ApplicationController'
       end
 
-      def picture_image_styles=(picture_image_styles)
-        @@picture_image_styles = picture_image_styles.with_indifferent_access
-      end
+      # def paperclip_options=(paperclip_options)
+      #   @@paperclip_options = picture_image_styles.with_indifferent_access
+      # end
     end
   end
 end
