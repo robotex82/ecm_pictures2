@@ -15,7 +15,10 @@ module Ecm::Pictures
 
         f.inputs do
           f.has_many :attached_pictures do |p|
-            p.input :picture, :as => :select, :collection => Ecm::Pictures::Picture.all.collect { |picture| [picture, picture.id, {:style => "background-image: url('#{picture.image.url(:medium_thumb)}'); width: #{Ecm::Pictures::Configuration.picture_image_styles[:medium_thumb].split('x').first}px; height: #{Ecm::Pictures::Configuration.picture_image_styles[:medium_thumb].split('x').last}px; background-repeat: no-repeat; background-position: center;"}] }
+            p.input :picture, :as => :select,
+                              :collection => Ecm::Pictures::Picture.all.collect do |picture|
+                                [picture, picture.id, {:style => "background-image: url('#{picture.image.url(:medium_thumb)}'); width: #{Ecm::Pictures::Configuration.paperclip_options[:styles][:medium_thumb].split('x').first}px; height: #{Ecm::Pictures::Configuration.paperclip_options[:styles][:medium_thumb].split('x').last}px; background-repeat: no-repeat; background-position: center;"}]
+            end
           end # f.has_many :attached_pictures
         end # f.inputs
       end # def
