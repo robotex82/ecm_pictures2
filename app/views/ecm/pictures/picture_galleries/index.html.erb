@@ -5,3 +5,7 @@
     <%= render :partial => 'ecm/pictures/picture_galleries/picture_gallery_for_index', :locals => { :picture_gallery => pg } %>
   <% end %>
 </div>
+
+<div class="well page-actions">
+  <%= link_to(t('ecm.pictures.views.actions.back'), main_app.root_path, class: 'btn btn-default') %>
+</div>

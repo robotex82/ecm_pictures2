@@ -1,5 +1,6 @@
 en:
-  back: back
+  active_admin:
+    delete_link: Remove Link"
   ecm:
     pictures:
       actions:
@@ -12,4 +13,6 @@ en:
       picture_gallery:
         warnings:
           missing_gallery: "Could not find picture gallery %{name}"
-
+      views:
+        actions:
+          back: 'Back'

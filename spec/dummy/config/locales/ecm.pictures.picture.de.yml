@@ -20,6 +20,6 @@ de:
         position: Position
         thumbnail: Vorschau
         updated_at: Aktualisiert am
-  resources:
+  routes:
     ecm_pictures_pictures: bilder
 

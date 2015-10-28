@@ -14,4 +14,6 @@ de:
       picture_gallery:
         warnings:
           missing: "Die Galerie %{name} wurde nicht gefunden."
-
+      views:
+        actions:
+          back: 'Zurück'

@@ -9,7 +9,7 @@ require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
 Bundler.require(*Rails.groups)
-# require 'active_admin'
+require 'less-rails'
 require 'twitter-bootstrap-rails'
 require 'devise'
 require "ecm_pictures2"
