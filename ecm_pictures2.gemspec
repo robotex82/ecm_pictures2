@@ -27,22 +27,18 @@ Gem::Specification.new do |s|
 
   # Dummy app
   s.add_development_dependency 'rails-dummy'
+  s.add_development_dependency "thin"
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency 'less-rails'
+  s.add_development_dependency 'therubyracer'
   s.add_development_dependency "twitter-bootstrap-rails"
   s.add_development_dependency 'devise'
-
-  # Development Server
-  s.add_development_dependency "thin"
+  s.add_development_dependency 'activeadmin', '~> 1.0.0.pre2'
+  s.add_development_dependency 'coffee-rails'
+  s.add_development_dependency 'sass-rails'
 
   # Documentation
   s.add_development_dependency "yard"
-
-  # Active admin
-  # s.add_development_dependency 'activeadmin'
-  s.add_development_dependency 'coffee-rails'
-  s.add_development_dependency 'less-rails'
-  s.add_development_dependency 'sass-rails'
-  s.add_development_dependency 'therubyracer'
 
   # Tests
   s.add_development_dependency 'capybara'
