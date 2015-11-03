@@ -46,7 +46,6 @@ module Ecm::PicturesHelper
     return link_options
   end
 
-  # TODO: Implement this.
   def render_picture(name, options = {})
     begin
       options = {:preview_style => :thumb}.merge(options)
@@ -59,9 +58,7 @@ module Ecm::PicturesHelper
           content_tag(:p, I18n.t('ecm.pictures.picture.warnings.missing', :name => name.to_s))
         end
       else
-        content_tag(:div, :class => 'row') do
-          render picture
-        end
+        render picture
       end
 
     rescue Exception => e

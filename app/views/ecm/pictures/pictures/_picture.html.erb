@@ -1,5 +1,7 @@
+<%= Ecm::Pictures::Configuration.prevent_textile_rendering_in_html ? '<notextile>'.html_safe : '' %>
 <div class="col-xs-6 col-md-3">
   <%= link_to("#{picture.image.url}#{File.extname(picture.image_file_name).downcase}", :'data-gallery' => "gallery", :class => 'thumbnail') do %>
     <%= image_tag(picture.image.url(:default_thumb)) %>
   <% end %>
 </div>
+<%= Ecm::Pictures::Configuration.prevent_textile_rendering_in_html ? '</notextile>'.html_safe : '' %>

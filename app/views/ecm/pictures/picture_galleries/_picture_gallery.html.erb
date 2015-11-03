@@ -1,3 +1,4 @@
+<%= Ecm::Pictures::Configuration.prevent_textile_rendering_in_html ? '<notextile>'.html_safe : '' %>
 <div class="picture-gallery-description">
   <%= mu picture_gallery, :description %>
 </div>
@@ -5,3 +6,4 @@
 <div class="picture-gallery-pictures row" data-target="#modal-gallery" data-toggle="modal-gallery">
   <%= render picture_gallery.pictures %>
 </div>
+<%= Ecm::Pictures::Configuration.prevent_textile_rendering_in_html ? '</notextile>'.html_safe : '' %>
