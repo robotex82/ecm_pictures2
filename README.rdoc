@@ -51,6 +51,13 @@ Migrate:
 
   > rake db:migrate
 
+Add the helper to your application controller:
+
+    # app/controllers/application_controller.rb
+    class ApplicationController < ActionController::Base
+      helper Ecm::PicturesHelper
+      ...
+    end
 
 == Optional: Generate locale files
 
