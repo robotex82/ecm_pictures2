@@ -44,7 +44,7 @@ class Ecm::Pictures::Picture < ActiveRecord::Base
     when :erb
       "<%= render_picture '#{self.name}' %>"
     when :textile
-      "!#{image.url}!".gsub(/\?[0-9]*/, '')
+      "!#{image.url}!".gsub(/(\?[0-9]{1,})/, '')
     else
     end
   end
