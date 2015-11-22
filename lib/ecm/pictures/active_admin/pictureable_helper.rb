@@ -51,3 +51,4 @@ end # module Ecm::Pictures
 ::ActiveAdmin::ResourceDSL.send :include, Ecm::Pictures::ActiveAdmin::PictureableHelper
 ::ActiveAdmin::Views::Pages::Show.send :include, Ecm::Pictures::ActiveAdmin::PictureableHelper
 ::ActiveAdmin::Views::Pages::Form.send :include, Ecm::Pictures::ActiveAdmin::PictureableHelper
+::ActiveAdmin::Views::ActiveAdminForm.send :include, Ecm::Pictures::ActiveAdmin::PictureableHelper
