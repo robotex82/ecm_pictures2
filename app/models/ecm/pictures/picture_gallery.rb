@@ -3,8 +3,8 @@ class Ecm::Pictures::PictureGallery < ActiveRecord::Base
 
   # associations
   has_many :pictures,
-           :dependent => :destroy # ,
-           # :order => 'position'
+           dependent: :destroy # ,
+  # :order => 'position'
 
   # attributes
   attr_accessible :description,
@@ -13,30 +13,30 @@ class Ecm::Pictures::PictureGallery < ActiveRecord::Base
                   :name,
                   :pictures_attributes,
                   :position if respond_to?(:attr_accessible)
-  accepts_nested_attributes_for :pictures, :allow_destroy => true
+  accepts_nested_attributes_for :pictures, allow_destroy: true
 
   # acts as list
   acts_as_list
   default_scope { order(:position) }
 
   # acts as markup
-  acts_as_markup :language => :variable, :columns => [ :description ]
+  acts_as_markup language: :variable, columns: [:description]
 
   # callbacks
   after_initialize :set_defaults
 
   # friendly id
   extend FriendlyId
-  friendly_id :name, :use => [:slugged, :finders]
+  friendly_id :name, use: [:slugged, :finders]
 
   # validations
-  validates :markup_language, :presence  => true,
-                              :inclusion => Ecm::Pictures::Configuration.markup_languages
-  validates :name, :presence => true,
-                   :uniqueness => true
+  validates :markup_language, presence: true,
+                              inclusion: Ecm::Pictures::Configuration.markup_languages
+  validates :name, presence: true,
+                   uniqueness: true
 
   def display_code
-    "<%= render_picture_gallery '#{self.name}' %>"
+    "<%= render_picture_gallery '#{name}' %>"
   end
 
   def to_s
@@ -47,9 +47,8 @@ class Ecm::Pictures::PictureGallery < ActiveRecord::Base
 
   def set_defaults
     if self.new_record?
-      self.link_images = true if self.link_images.nil?
+      self.link_images = true if link_images.nil?
       self.markup_language ||= Ecm::Pictures::Configuration.default_markup_language
     end
   end
 end
-

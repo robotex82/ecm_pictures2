@@ -1,7 +1,7 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe "ecm/pictures/picture_galleries/index.html.erb" do
-  def add_controller_helpers *controllers
+describe 'ecm/pictures/picture_galleries/index.html.erb' do
+  def add_controller_helpers(*controllers)
     controllers.each { |c| view.singleton_class.class_eval { include c.new._helpers } }
   end
 
@@ -15,7 +15,6 @@ describe "ecm/pictures/picture_galleries/index.html.erb" do
     render
   end
 
-  it { view.should render_template(:partial => "_picture_gallery_for_index", :count => @picture_galleries.count) }
+  it { view.should render_template(partial: '_picture_gallery_for_index', count: @picture_galleries.count) }
   it { @picture_galleries.each { |picture_gallery| rendered.should include(picture_gallery.name) } }
 end
-

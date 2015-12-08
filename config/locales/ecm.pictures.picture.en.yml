@@ -18,6 +18,7 @@ en:
         name: name
         picture_gallery: picture gallery
         position: position
+        preview_picture: preview
         thumbnail: thumbnail
         updated_at: updated at
   routes:

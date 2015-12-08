@@ -18,6 +18,7 @@ de:
         name: Name
         picture_gallery: Galerie
         position: Position
+        preview_picture: Vorschau
         thumbnail: Vorschau
         updated_at: Aktualisiert am
   routes:

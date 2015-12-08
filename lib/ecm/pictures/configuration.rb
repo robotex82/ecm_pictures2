@@ -28,10 +28,6 @@ module Ecm
       mattr_accessor :prevent_textile_rendering_in_html do
         true
       end
-
-      # def paperclip_options=(paperclip_options)
-      #   @@paperclip_options = picture_image_styles.with_indifferent_access
-      # end
     end
   end
 end

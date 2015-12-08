@@ -8,23 +8,25 @@ module Ecm::PicturesHelper
   #
   #  <%= render_picture_gallery 'Holidays 2012' %>
   def render_picture_gallery(name, options = {})
-    begin
-      options = {:preview_style => :thumb}.merge(options)
+    options = { preview_style: :thumb }.merge(options)
 
-      gallery = Ecm::Pictures::PictureGallery.where(:name => name.to_s).first
-      gallery_identifier = gallery.to_param rescue 'missing'
+    gallery = Ecm::Pictures::PictureGallery.where(name: name.to_s).first
+    gallery_identifier = begin
+                           gallery.to_param
+                         rescue
+                           'missing'
+                         end
 
-      if gallery.nil?
-        content_tag(:div, :class => 'warning missing picture-gallery') do
-          content_tag(:p, I18n.t('ecm.pictures.picture_gallery.warnings.missing', :name => name.to_s))
-        end
-      else
-        render gallery
+    if gallery.nil?
+      content_tag(:div, class: 'warning missing picture-gallery') do
+        content_tag(:p, I18n.t('ecm.pictures.picture_gallery.warnings.missing', name: name.to_s))
       end
-
-    rescue Exception => e
-      return e.message
+    else
+      render gallery
     end
+
+  rescue Exception => e
+    return e.message
   end
 
   # helper method to build link options for images inside a gallery.
@@ -35,35 +37,32 @@ module Ecm::PicturesHelper
     link_options[:rel] = "lightbox[#{gallery_identifier}]"
 
     # Add thumbnail class for twitter bootstrap
-    link_options[:class] = "thumbnail"
+    link_options[:class] = 'thumbnail'
 
     # build the caption
-    caption = ""
+    caption = ''
     caption << "<div class=\"caption-name\">#{picture.name}</div>" unless picture.name.blank?
     caption << "<div class=\"caption-description\">#{picture.description}</div>" unless picture.description.blank?
     link_options[:"data-ob_caption"] = caption if caption.size > 0
 
-    return link_options
+    link_options
   end
 
   def render_picture(name, options = {})
-    begin
-      options = {:preview_style => :thumb}.merge(options)
+    options = { preview_style: :thumb }.merge(options)
 
-      picture = Ecm::Pictures::Picture.where(:name => name.to_s).first
-      # gallery_identifier = gallery.to_param rescue 'missing'
+    picture = Ecm::Pictures::Picture.where(name: name.to_s).first
+    # gallery_identifier = gallery.to_param rescue 'missing'
 
-      if picture.nil?
-        content_tag(:div, :class => 'warning missing picture') do
-          content_tag(:p, I18n.t('ecm.pictures.picture.warnings.missing', :name => name.to_s))
-        end
-      else
-        render picture
+    if picture.nil?
+      content_tag(:div, class: 'warning missing picture') do
+        content_tag(:p, I18n.t('ecm.pictures.picture.warnings.missing', name: name.to_s))
       end
-
-    rescue Exception => e
-      return e.message
+    else
+      render picture
     end
+
+  rescue Exception => e
+    return e.message
   end
 end
-

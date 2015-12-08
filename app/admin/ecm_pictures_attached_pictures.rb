@@ -6,9 +6,8 @@ ActiveAdmin.register Ecm::Pictures::AttachedPicture do
   controller do
     def destroy
       destroy! do |format|
-         format.html { redirect_to :back }
+        format.html { redirect_to :back }
       end
     end
   end
 end
-

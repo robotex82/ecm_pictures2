@@ -1,7 +1,7 @@
 include ActiveAdmin::ActsAsList::Helper if defined?(::ActiveAdmin)
 
 ActiveAdmin.register Ecm::Pictures::Picture do
-  menu :parent => I18n.t('ecm.pictures.active_admin.menu')
+  menu parent: I18n.t('ecm.pictures.active_admin.menu')
 
   permit_params :description,
                 :image,
@@ -22,16 +22,16 @@ ActiveAdmin.register Ecm::Pictures::Picture do
   #   end
   # end
 
-  form :html => { :enctype => "multipart/form-data" } do |f|
+  form html: { enctype: 'multipart/form-data' } do |f|
     f.inputs do
       f.input :picture_gallery
       f.input :name
-      f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url(:thumb))
+      f.input :image, as: :file, hint: f.template.image_tag(f.object.image.url(:thumb))
       f.input :description
     end
 
     f.inputs do
-      f.input :markup_language, :as => :select, :collection => Ecm::Pictures::Configuration.markup_languages
+      f.input :markup_language, as: :select, collection: Ecm::Pictures::Configuration.markup_languages
     end
 
     f.actions
@@ -44,7 +44,7 @@ ActiveAdmin.register Ecm::Pictures::Picture do
     end
     column :picture_gallery
     column :name
-    column :image_file_size, :sortable => :image_file_size do |picture|
+    column :image_file_size, sortable: :image_file_size do |picture|
       number_to_human_size(picture.image_file_size)
     end
     column :created_at
@@ -53,7 +53,7 @@ ActiveAdmin.register Ecm::Pictures::Picture do
 
   show do
     panel Ecm::Pictures::Picture.human_attribute_name(:image) do
-      div  { image_tag ecm_pictures_picture.image.url }
+      div { image_tag ecm_pictures_picture.image.url }
     end
 
     panel Ecm::Pictures::Picture.human_attribute_name(:description) do
@@ -72,16 +72,16 @@ ActiveAdmin.register Ecm::Pictures::Picture do
       panel type.constantize.model_name.human do
         table_for attached_pictures.map(&:pictureable) do
           column :to_s
-        column do |obj|
-          link_to(I18n.t('active_admin.view'), [:admin, obj], :class => "member_link view_link") +
-          link_to(I18n.t('active_admin.edit'), [:edit, :admin, obj], :class => "member_link edit_link")
-        end # column
+          column do |obj|
+            link_to(I18n.t('active_admin.view'), [:admin, obj], class: 'member_link view_link') +
+              link_to(I18n.t('active_admin.edit'), [:edit, :admin, obj], class: 'member_link edit_link')
+          end # column
         end # table_for
       end # panel
     end # each
   end # show
 
-  sidebar Ecm::Pictures::Picture.human_attribute_name(:details), :only => :show do
+  sidebar Ecm::Pictures::Picture.human_attribute_name(:details), only: :show do
     attributes_table_for ecm_pictures_picture do
       row :picture_gallery
       row :name
@@ -95,4 +95,3 @@ ActiveAdmin.register Ecm::Pictures::Picture do
     end
   end # sidebar
 end if defined?(::ActiveAdmin)
-

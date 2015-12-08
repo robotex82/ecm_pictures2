@@ -9,14 +9,13 @@ module Ecm
       # This will only create the show action for picture galleries, but omit the index action.
       def self.routes(router, options = {})
         options.reverse_merge!(
-          { :picture_gallery_actions => [:index, :show], 
-            :picture_actions => [:index, :show] 
-          }
+          picture_gallery_actions: [:index, :show],
+          picture_actions: [:index, :show]
         )
-        
-        router.resources :ecm_pictures_picture_galleries, :only => options[:picture_gallery_actions], :controller => 'ecm/pictures/picture_galleries'
-        router.resources :ecm_pictures_pictures,:only => options[:picture_actions], :controller => 'ecm/pictures/pictures'      
-      end  
+
+        router.resources :ecm_pictures_picture_galleries, only: options[:picture_gallery_actions], controller: 'ecm/pictures/picture_galleries'
+        router.resources :ecm_pictures_pictures, only: options[:picture_actions], controller: 'ecm/pictures/pictures'
+      end
     end
   end
-end    
+end

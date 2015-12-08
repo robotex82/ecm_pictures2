@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 module Ecm::Pictures
   describe Picture do
@@ -16,7 +16,7 @@ module Ecm::Pictures
     end # context 'acts as list'
 
     context 'friendly id' do
-      subject { FactoryGirl.create(:ecm_pictures_picture, :name => 'Look, a slugged category!') }
+      subject { FactoryGirl.create(:ecm_pictures_picture, name: 'Look, a slugged category!') }
 
       it { expect(subject.to_param).to eq('look-a-slugged-category') }
     end # context 'friendly id'
@@ -32,22 +32,22 @@ module Ecm::Pictures
     end # context 'setting default handler'
 
     context 'setting default name' do
-      subject { FactoryGirl.create(:ecm_pictures_picture, :name => nil) }
+      subject { FactoryGirl.create(:ecm_pictures_picture, name: nil) }
 
       it { should be_valid }
 
       it 'should generate a name from the filename if name is nil' do
         subject.valid?
-        subject.name.should eq("image")
+        subject.name.should eq('image')
       end # it
 
-      subject { FactoryGirl.create(:ecm_pictures_picture, :name => "") }
+      subject { FactoryGirl.create(:ecm_pictures_picture, name: '') }
 
       it { should be_valid }
 
       it 'should generate a name from the filename if name is nil' do
         subject.valid?
-        subject.name.should eq("image")
+        subject.name.should eq('image')
       end # it
     end # context 'setting default name'
 
@@ -56,7 +56,7 @@ module Ecm::Pictures
       # it { should validate_presence_of(:name) }
 
       it { should validate_inclusion_of(:markup_language).in_array(Ecm::Pictures::Configuration.markup_languages.map(&:to_s)) }
-      it { should_not allow_value(%w[foo bar baz]).for(:markup_language) }
+      it { should_not allow_value('foo').for(:markup_language) }
     end # context 'validations'
 
     context '#display_code' do
@@ -78,4 +78,3 @@ module Ecm::Pictures
     end # context 'for textile'
   end # describe Picture
 end # module Ecm::Pictures
-

@@ -5,10 +5,25 @@
 Create and administrate picture galleries in active admin and display them on
 in your ruby on rails applictation. Orangebox is used for lightbox support.
 
-# Prerequisites
+= Migrating from 1.x.x to 2.0.0
+
+Add active_admin-awesome_nested_set to your gemfile, if you are using activeadmin:
+
+    # Gemfile
+    gem 'active_admin-acts_as_list'
+
+
+= Prerequisites
 
   * Ruby on Rails 4.x
   * Twitter Bootstrap 3
+
+= Prerequisites when using active admin
+
+if you are using activeadmin as backend, ecm_cms2 comes with admin files to provide a backend. In that case, you'll need active_admin-acts_as_list. Add it to your gemfile:
+
+    # Gemfile
+    gem 'active_admin-acts_as_list'
 
 = Features
 
@@ -73,12 +88,12 @@ Once you have a gallery, you can display it like this:
 
   <%= render_picture_gallery 'Holidays 2012' %>
 
-= Todo
+= Running specs
 
-  * Tests, tests, tests.
-  * Better docs.
-  * Render picture helpers.
-  * Add a published flag to galleries and pictures.
+    gem install bundler
+    bundle
+    cd spec/dummy && rake db:migrate RAILS_ENV=test && cd ../..
+    guard
 
 = License
 
