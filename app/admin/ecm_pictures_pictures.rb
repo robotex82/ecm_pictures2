@@ -1,4 +1,4 @@
-include ActiveAdmin::ActsAsList::Helper if defined?(::ActiveAdmin)
+include ActiveAdmin::ActsAsList::Helper if Gem::Specification.find_all_by_name('activeadmin').any?
 
 ActiveAdmin.register Ecm::Pictures::Picture do
   menu parent: I18n.t('ecm.pictures.active_admin.menu')
@@ -94,4 +94,4 @@ ActiveAdmin.register Ecm::Pictures::Picture do
       row :updated_at
     end
   end # sidebar
-end if defined?(::ActiveAdmin)
+end if Gem::Specification.find_all_by_name('activeadmin').any?

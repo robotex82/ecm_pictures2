@@ -10,4 +10,4 @@ ActiveAdmin.register Ecm::Pictures::AttachedPicture do
       end
     end
   end
-end
+end if Gem::Specification.find_all_by_name('activeadmin').any?
