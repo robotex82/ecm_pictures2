@@ -39,6 +39,12 @@ class Ecm::Pictures::PictureGallery < ActiveRecord::Base
     "<%= render_picture_gallery '#{name}' %>"
   end
 
+  def picture_images=(picture_images)
+    picture_images.each do |image|
+      pictures.build(image: image)
+    end
+  end
+
   def to_s
     name
   end
