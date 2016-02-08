@@ -30,6 +30,9 @@ class Ecm::Pictures::Picture < ActiveRecord::Base
   # paperclip
   has_attached_file :image, Ecm::Pictures::Configuration.paperclip_options
 
+  # tagging
+  acts_as_taggable if respond_to?(:acts_as_taggable)
+
   # validations
   validates :image, attachment_presence: true
   # validates_attachment_presence :image
@@ -49,6 +52,10 @@ class Ecm::Pictures::Picture < ActiveRecord::Base
   end
 
   def to_s
+    name
+  end
+
+  def human
     name
   end
 

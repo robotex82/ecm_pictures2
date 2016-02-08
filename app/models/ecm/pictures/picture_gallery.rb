@@ -29,6 +29,9 @@ class Ecm::Pictures::PictureGallery < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]
 
+  # tagging
+  acts_as_taggable if respond_to?(:acts_as_taggable)
+
   # validations
   validates :markup_language, presence: true,
                               inclusion: Ecm::Pictures::Configuration.markup_languages
@@ -46,6 +49,10 @@ class Ecm::Pictures::PictureGallery < ActiveRecord::Base
   end
 
   def to_s
+    name
+  end
+
+  def human
     name
   end
 

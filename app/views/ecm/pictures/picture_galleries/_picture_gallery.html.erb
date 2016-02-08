@@ -3,6 +3,14 @@
   <%= mu picture_gallery, :description %>
 </div>
 
+<% if picture_gallery.respond_to?(:tag_list) %>
+  <div class="tags bottom-margin-1">
+    <% picture_gallery.tag_list.each do |tag| %>
+      <span class="label label-default"><%= tag %></span>
+    <% end %>
+  </div>
+<% end %>
+
 <div class="picture-gallery-pictures row" data-target="#modal-gallery" data-toggle="modal-gallery">
   <%= render picture_gallery.pictures %>
 </div>
