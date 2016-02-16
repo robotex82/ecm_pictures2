@@ -28,6 +28,10 @@ module Ecm
       mattr_accessor :prevent_textile_rendering_in_html do
         true
       end
+
+      mattr_accessor :render_picture_gallery_index_as do
+        :thumbnail
+      end
     end
   end
 end
