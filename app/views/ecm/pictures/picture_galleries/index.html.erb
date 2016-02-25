@@ -10,11 +10,13 @@
 <% when :media_object %>
   <%= render_collection(@picture_galleries, Ecm::Pictures::PictureGallery, as: :bootstrap_media_object) do |list| %>
     <h4><%= list.resource.name %>
-      <span class="tags">
-        <% list.resource.tag_list.each do |tag| %>
-          <span class="label label-primary"><%= tag %></span>
-        <% end %>
-      </span>
+      <% if list.resource.respond_to?(:tag_list) %>
+        <span class="tags">
+          <% list.resource.tag_list.each do |tag| %>
+            <span class="label label-primary"><%= tag %></span>
+          <% end %>
+        </span>
+      <% end %>
     </h4>
     <%= list.media_object title: '', body: mu(list.resource, :description), image_url: list.resource.pictures.first.image.url(:default_thumb) %>
   <% end %>
