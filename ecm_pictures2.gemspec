@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = 'ECM Picture galleries module for ruby on rails.'
   s.description = 'ECM Picture galleries module for ruby on rails.'
 
-  s.files = Dir['{app,config,db,lib}/**/*'] + ['MIT-LICENSE', 'Rakefile', 'README.rdoc']
+  s.files = Dir['{app,config,db,lib}/**/*', 'spec/factories/**/*', 'spec/files/**/*'] + ['MIT-LICENSE', 'Rakefile', 'README.rdoc']
 
   s.add_dependency 'rails', '>= 4.0'
 
