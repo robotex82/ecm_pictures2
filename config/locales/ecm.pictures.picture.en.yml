@@ -9,7 +9,8 @@ en:
         created_at: created at
         description: description
         display_code: display code
-        image: image
+        display_code_for_erb: display code (erb)
+        display_code_for_textile: display code (textile)
         image_file: image
         image_file_name: image filename
         image_file_size: image size

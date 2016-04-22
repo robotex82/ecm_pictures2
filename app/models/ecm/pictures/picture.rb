@@ -42,6 +42,14 @@ class Ecm::Pictures::Picture < ActiveRecord::Base
                               inclusion: Ecm::Pictures::Configuration.markup_languages
   validates :name, presence: true
 
+  def display_code_for_erb
+    display_code(:erb)
+  end
+
+  def display_code_for_textile
+    display_code(:textile)
+  end
+
   def display_code(style)
     case style
     when :erb

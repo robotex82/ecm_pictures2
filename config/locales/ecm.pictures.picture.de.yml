@@ -9,6 +9,8 @@ de:
         created_at: Erstellt am
         description: Beschreibung
         display_code: Anzeigecode
+        display_code_for_erb: Anzeigecode (erb)
+        display_code_for_textile: Anzeigecode (textile)
         image: Datei
         image_file: Datei
         image_file_name: Dateiname

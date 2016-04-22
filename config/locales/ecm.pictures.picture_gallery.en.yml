@@ -8,7 +8,7 @@ en:
       ecm/pictures/picture_gallery:
         created_at: created at
         description: description
-        display_code: display code
+        display_code_for_erb: display code (erb)
         link_images: link images
         markup_language: markup language
         name: name

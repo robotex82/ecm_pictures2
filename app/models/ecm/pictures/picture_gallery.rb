@@ -38,7 +38,7 @@ class Ecm::Pictures::PictureGallery < ActiveRecord::Base
   validates :name, presence: true,
                    uniqueness: true
 
-  def display_code
+  def display_code_for_erb
     "<%= render_picture_gallery '#{name}' %>"
   end
 

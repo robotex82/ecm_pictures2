@@ -8,7 +8,7 @@ de:
       ecm/pictures/picture_gallery:
         created_at: Erstellt am
         description: Beschreibung
-        display_code: Anzeigecode
+        display_code_for_erb: Anzeigecode (erb)
         link_images: Bilder verlinken
         markup_language: Markup Sprache
         name: Name
