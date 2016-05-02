@@ -49,15 +49,20 @@ module Ecm::PicturesHelper
   end
 
   def render_picture(name, options = {})
-    options = { preview_style: :thumb }.merge(options)
+    options = { preview_style: :thumb, plain: false }.merge(options)
+    plain = options[:plain]
 
     picture = Ecm::Pictures::Picture.where(name: name.to_s).first
     # gallery_identifier = gallery.to_param rescue 'missing'
 
     if picture.nil?
-      content_tag(:div, class: 'warning missing picture') do
+      return content_tag(:div, class: 'warning missing picture') do
         content_tag(:p, I18n.t('ecm.pictures.picture.warnings.missing', name: name.to_s))
       end
+    end
+
+    if plain
+      image_tag picture.image.url
     else
       render picture
     end
