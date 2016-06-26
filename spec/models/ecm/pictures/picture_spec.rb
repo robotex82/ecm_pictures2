@@ -5,7 +5,7 @@ module Ecm::Pictures
     subject { FactoryGirl.create(:ecm_pictures_picture) }
 
     context 'associations' do
-      it { should belong_to(:picture_gallery) }
+      it { should belong_to(:gallery) }
     end # context 'associations'
 
     context 'acts as list' do
@@ -16,9 +16,9 @@ module Ecm::Pictures
     end # context 'acts as list'
 
     context 'friendly id' do
-      subject { FactoryGirl.create(:ecm_pictures_picture, name: 'Look, a slugged category!') }
+      subject { FactoryGirl.create(:ecm_pictures_picture, name: 'Look, a slugged picture!') }
 
-      it { expect(subject.to_param).to eq('look-a-slugged-category') }
+      it { expect(subject.to_param).to eq('look-a-slugged-picture') }
     end # context 'friendly id'
 
     context 'paperclip' do

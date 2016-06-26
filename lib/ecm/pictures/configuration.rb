@@ -29,7 +29,7 @@ module Ecm
         true
       end
 
-      mattr_accessor :render_picture_gallery_index_as do
+      mattr_accessor :render_gallery_index_as do
         :thumbnail
       end
     end

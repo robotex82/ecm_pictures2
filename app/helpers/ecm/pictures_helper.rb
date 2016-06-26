@@ -10,7 +10,7 @@ module Ecm::PicturesHelper
   def render_picture_gallery(name, options = {})
     options = { preview_style: :thumb }.merge(options)
 
-    gallery = Ecm::Pictures::PictureGallery.where(name: name.to_s).first
+    gallery = Ecm::Pictures::Gallery.where(name: name.to_s).first
     gallery_identifier = begin
                            gallery.to_param
                          rescue

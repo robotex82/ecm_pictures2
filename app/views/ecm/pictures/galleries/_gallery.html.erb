@@ -1,17 +1,17 @@
 <%= Ecm::Pictures::Configuration.prevent_textile_rendering_in_html ? '<notextile>'.html_safe : '' %>
-<div class="picture-gallery-description">
-  <%= mu picture_gallery, :description %>
+<div class="gallery-description">
+  <%= mu gallery, :description %>
 </div>
 
-<% if picture_gallery.respond_to?(:tag_list) %>
+<% if gallery.respond_to?(:tag_list) %>
   <div class="tags bottom-margin-1">
-    <% picture_gallery.tag_list.each do |tag| %>
+    <% gallery.tag_list.each do |tag| %>
       <span class="label label-default"><%= tag %></span>
     <% end %>
   </div>
 <% end %>
 
-<div class="picture-gallery-pictures row" data-target="#modal-gallery" data-toggle="modal-gallery">
-  <%= render picture_gallery.pictures %>
+<div class="gallery-pictures row" data-target="#modal-gallery" data-toggle="modal-gallery">
+  <%= render gallery.pictures %>
 </div>
 <%= Ecm::Pictures::Configuration.prevent_textile_rendering_in_html ? '</notextile>'.html_safe : '' %>

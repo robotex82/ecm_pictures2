@@ -2,8 +2,8 @@ require 'rails_helper'
 
 module Ecm
   module Pictures
-    describe PictureGallery do
-      subject { FactoryGirl.create(:ecm_pictures_picture_gallery) }
+    describe Gallery do
+      subject { FactoryGirl.create(:ecm_pictures_gallery) }
 
       context 'associations' do
         it { should have_many(:pictures) }
@@ -22,9 +22,9 @@ module Ecm
       end
 
       context 'friendly id' do
-        subject { FactoryGirl.create(:ecm_pictures_picture_gallery, name: 'Look, a slugged category!') }
+        subject { FactoryGirl.create(:ecm_pictures_gallery, name: 'Look, a slugged gallery!') }
 
-        it { expect(subject.to_param).to eq('look-a-slugged-category') }
+        it { expect(subject.to_param).to eq('look-a-slugged-gallery') }
       end
     end
   end

@@ -1,19 +1,10 @@
 class Ecm::Pictures::Picture < ActiveRecord::Base
-  self.table_name = 'ecm_pictures_pictures'
-
   # associations
-  belongs_to :picture_gallery, counter_cache: true
+  belongs_to :gallery, counter_cache: true
   has_many :attached_pictures, foreign_key: 'ecm_pictures_picture_id'
-  # attributes
-  attr_accessible :description,
-                  :image,
-                  :markup_language,
-                  :name,
-                  :picture_gallery_id,
-                  :position if respond_to?(:attr_accessible)
 
   # acts as list
-  acts_as_list scope: :picture_gallery
+  acts_as_list scope: :gallery
 
   # acts as markup
   acts_as_markup language: :variable, columns: [:description, :description]
@@ -23,7 +14,7 @@ class Ecm::Pictures::Picture < ActiveRecord::Base
   before_validation :set_name_from_image_file_name, if: proc { |p| (p.name.nil? || p.name.empty?) }
 
   # default scope
-  default_scope { order(:picture_gallery_id, :position) }
+  default_scope { order(:gallery_id, :position) }
   # friendly id
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]

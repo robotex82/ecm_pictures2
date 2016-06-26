@@ -38,10 +38,10 @@ Ecm::Pictures.configure do |config|
   #
   config.prevent_textile_rendering_in_html = true
 
-  # Render picture galleries in the index view as :thumbnail
+  # Render galleries in the index view as :thumbnail
   # or :media_object.
   #
-  # Default: config.render_picture_gallery_index_as = :media_object
+  # Default: config.render_gallery_index_as = :media_object
   #
-  config.render_picture_gallery_index_as = :media_object
+  config.render_gallery_index_as = :media_object
 end

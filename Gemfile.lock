@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ecm_pictures2 (2.0.0)
+    ecm_pictures2 (3.0.0)
       RedCloth
       acts_as_list
       acts_as_markup
@@ -12,7 +12,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    RedCloth (4.2.9)
+    RedCloth (4.3.0)
     actionmailer (4.2.5)
       actionpack (= 4.2.5)
       actionview (= 4.2.5)
@@ -63,7 +63,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    acts_as_list (0.7.2)
+    acts_as_list (0.7.4)
       activerecord (>= 3.0)
     acts_as_markup (2.0.2)
       activerecord (>= 3.0.20)
@@ -191,7 +191,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     orm_adapter (0.5.0)
-    paperclip (4.3.2)
+    paperclip (4.3.6)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       cocaine (~> 0.5.5)
@@ -338,4 +338,4 @@ DEPENDENCIES
   twitter-bootstrap-rails
 
 BUNDLED WITH
-   1.10.6
+   1.12.5

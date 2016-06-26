@@ -1,11 +1,11 @@
 en:
   activerecord:
     models:
-      ecm/pictures/picture_gallery:
+      ecm/pictures/gallery:
         one: picture gallery
         other: picture galleries
     attributes:
-      ecm/pictures/picture_gallery:
+      ecm/pictures/gallery:
         created_at: created at
         description: description
         display_code_for_erb: display code (erb)
@@ -17,5 +17,5 @@ en:
         position: position
         updated_at: updated at
   routes:
-    ecm_pictures_picture_galleries: picture-galleries
+    ecm_pictures_galleries: picture-galleries
 

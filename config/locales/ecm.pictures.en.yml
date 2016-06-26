@@ -10,7 +10,7 @@ en:
       picture:
         warnings:
           missing_gallery: "Could not find picture %{name}"
-      picture_gallery:
+      gallery:
         warnings:
           missing_gallery: "Could not find picture gallery %{name}"
       views:

@@ -1,16 +1,16 @@
 require 'rails_helper'
 
-describe 'routing to pictures galleries' do
-  it 'routes /ecm_pictures_picture_galleries to #index' do
-    expect(get: '/ecm_pictures_picture_galleries').to route_to(
-      controller: 'ecm/pictures/picture_galleries',
+describe 'routing to galleries' do
+  it 'routes /ecm_pictures_galleries to #index' do
+    expect(get: '/ecm_pictures_galleries').to route_to(
+      controller: 'ecm/pictures/galleries',
       action: 'index'
     )
   end # it
 
-  it 'routes /ecm_pictures_picture_galleries/example-gallery to #show' do
-    expect(get: '/ecm_pictures_picture_galleries/example-gallery').to route_to(
-      controller: 'ecm/pictures/picture_galleries',
+  it 'routes /ecm_pictures_galleries/example-gallery to #show' do
+    expect(get: '/ecm_pictures_galleries/example-gallery').to route_to(
+      controller: 'ecm/pictures/galleries',
       action: 'show',
       id: 'example-gallery'
     )

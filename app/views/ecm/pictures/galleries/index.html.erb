@@ -1,14 +1,14 @@
-<h1><%= Ecm::Pictures::PictureGallery.model_name.human(:count => :other) %></h1>
+<h1><%= Ecm::Pictures::Gallery.model_name.human(:count => :other) %></h1>
 
-<% case Ecm::Pictures::Configuration.render_picture_gallery_index_as %>
+<% case Ecm::Pictures::Configuration.render_gallery_index_as %>
 <% when :thumbnail %>
   <div class="row">
-    <% @picture_galleries.each do |pg| %>
-      <%= render :partial => 'ecm/pictures/picture_galleries/picture_gallery_for_index', :locals => { :picture_gallery => pg } %>
+    <% @galleries.each do |g| %>
+      <%= render :partial => 'ecm/pictures/galleries/gallery_for_index', :locals => { :gallery => g } %>
     <% end %>
   </div>
 <% when :media_object %>
-  <%= render_collection(@picture_galleries, Ecm::Pictures::PictureGallery, as: :bootstrap_media_object) do |list| %>
+  <%= render_collection(@galleries, Ecm::Pictures::Gallery, as: :bootstrap_media_object) do |list| %>
     <h4><%= list.resource.name %>
       <% if list.resource.respond_to?(:tag_list) %>
         <span class="tags">

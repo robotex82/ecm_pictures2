@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-describe 'Ecm::Pictures::PictureGallery requests' do
+describe 'Ecm::Pictures::Gallery requests' do
   def set_resource_class
-    @resource_class = Ecm::Pictures::PictureGallery
+    @resource_class = Ecm::Pictures::Gallery
   end
 
   before do
     set_resource_class
     @resource_path = @resource_class.to_s.underscore.tr('/', '_').pluralize
     @resource_factory_name = @resource_class.to_s.underscore.tr('/', '_').to_sym
-  end # background
+  end
 
   describe 'show' do
     before do
