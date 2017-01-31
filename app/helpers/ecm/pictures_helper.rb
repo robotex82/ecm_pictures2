@@ -49,11 +49,16 @@ module Ecm::PicturesHelper
   end
 
   def render_picture(name, options = {})
-    options = { preview_style: :thumb, plain: false }.merge(options)
-    plain = options[:plain]
+    options.reverse_merge!(
+      preview_style: :thumb,
+      plain: false,
+      img_css_class: nil
+    )
+
+    img_css_class = options.delete(:img_css_class)
+    plain         = options.delete(:plain)
 
     picture = Ecm::Pictures::Picture.where(name: name.to_s).first
-    # gallery_identifier = gallery.to_param rescue 'missing'
 
     if picture.nil?
       return content_tag(:div, class: 'warning missing picture') do
@@ -62,7 +67,7 @@ module Ecm::PicturesHelper
     end
 
     if plain
-      image_tag picture.image.url
+      image_tag picture.image.url, class: img_css_class
     else
       render picture
     end
