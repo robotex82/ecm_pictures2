@@ -1,0 +1,15 @@
+%h1= @resource.name
+
+.row
+  - @resource.pictures.each do |picture|
+    = bootstrap_thumbnail(container_classes: Ecm::Pictures.thumbnail_container_css_classes, image_options: { src: picture.image.url(Ecm::Pictures.thumbnail_paperclip_style) }, link_options: { href: "#{picture.image.url}#{File.extname(picture.image_file_name).downcase}", :'data-gallery' => "gallery" }) do
+      %h3= picture.name
+      - if Ecm::Pictures::Configuration.prevent_textile_rendering_in_html
+        %notextile
+          %p= picture.description
+      - else
+        %p= picture.description
+
+= bootstrap_button_group do
+  = link_to Ecm::Pictures::Gallery.model_name.human(count: :other), ecm_pictures_engine.galleries_path, class: 'btn btn-primary'
+  = link_to t('ecm.pictures.views.actions.back'), :back, class: 'btn btn-default'

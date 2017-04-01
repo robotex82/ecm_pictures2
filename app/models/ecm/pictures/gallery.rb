@@ -50,6 +50,10 @@ module Ecm
         name
       end
 
+      def preview_picture
+        pictures.first
+      end
+
       private
 
       def set_defaults

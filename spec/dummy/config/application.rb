@@ -9,13 +9,8 @@ require 'sprockets/railtie'
 # require "rails/test_unit/railtie"
 
 Bundler.require(*Rails.groups)
-require 'active_admin-acts_as_list'
-require 'devise'
-require 'activeadmin'
-require 'rails-i18n'
-require 'less-rails'
+
 require 'twitter-bootstrap-rails'
-require 'ecm_pictures2'
 
 module Dummy
   class Application < Rails::Application

@@ -1,6 +1,4 @@
 de:
-  active_admin:
-    delete_link: "Verknüpfung entfernen"
   back: Zurück
   ecm:
     pictures:
@@ -11,9 +9,20 @@ de:
       picture:
         warnings:
           missing: "Das Bild %{name} wurde nicht gefunden."
+      pictures:
+        index:
+          more: 'Mehr'
+        show:
+          back: 'Zurück'
       gallery:
         warnings:
           missing: "Die Galerie %{name} wurde nicht gefunden."
+      galleries:
+        index:
+          more: 'Mehr'
       views:
         actions:
           back: 'Zurück'
+  routes:
+    galleries: galerien
+    pictures: bilder

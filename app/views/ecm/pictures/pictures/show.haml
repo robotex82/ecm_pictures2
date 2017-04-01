@@ -1,0 +1,17 @@
+.row
+  %h1= @resource.to_s
+
+.row
+  = image_tag(@resource.image.url, class: "img-responsive")
+
+.row
+  - if Ecm::Pictures::Configuration.prevent_textile_rendering_in_html
+    %notextile
+      %p= @resource.description
+  - else
+    %p= @resource.description
+
+.row
+  = bootstrap_button_group do
+    = link_to(@resource.gallery, @resource.gallery, class: 'btn btn-primary') if @resource.gallery.present?
+    = link_to t('.back'), :back, class: 'btn btn-default'

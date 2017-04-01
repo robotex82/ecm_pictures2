@@ -23,23 +23,19 @@ Gem::Specification.new do |s|
   s.add_dependency 'friendly_id'
   s.add_dependency 'paperclip'
   s.add_dependency 'RedCloth'
+  s.add_dependency 'route_translator'
+  s.add_dependency 'haml-rails'
+  s.add_dependency 'twitter-bootstrap-components-rails'
 
   # Dummy app
   s.add_development_dependency 'rails-dummy'
   s.add_development_dependency 'thin'
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'jquery-rails'
-  s.add_development_dependency 'twitter-bootstrap-rails'
-
-  # activeadmin
-  s.add_development_dependency 'devise'
-  s.add_development_dependency 'less-rails'
-  s.add_development_dependency 'therubyracer'
-  s.add_development_dependency 'active_admin-acts_as_list'
-  s.add_development_dependency 'activeadmin', '~> 1.0.0.pre2'
-  s.add_development_dependency 'coffee-rails'
-  s.add_development_dependency 'sass-rails'
-  s.add_development_dependency 'rails-i18n'
+  s.add_development_dependency "therubyracer"
+  s.add_development_dependency "less-rails" # Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+  s.add_development_dependency "twitter-bootstrap-rails"
+  s.add_development_dependency "coffee-rails"
 
   # Tests
   s.add_development_dependency 'capybara'

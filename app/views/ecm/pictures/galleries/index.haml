@@ -1,0 +1,28 @@
+%h1= Ecm::Pictures::Gallery.model_name.human(count: :other)
+
+- case Ecm::Pictures::Configuration.render_gallery_index_as
+- when :thumbnail
+  .row
+    - @collection.each do |resource|
+      = bootstrap_thumbnail(container_classes: "col-sm-6 col-md-4", image_options: { src: resource.preview_picture&.image&.url(Ecm::Pictures.thumbnail_paperclip_style) }) do
+        %h3= resource.name
+        - if Ecm::Pictures::Configuration.prevent_textile_rendering_in_html
+          %notextile
+            %p= resource.description
+        - else
+          %p= resource.description
+        %p
+          = link_to ecm_pictures_engine.gallery_path(resource), class: 'btn btn-primary' do
+            = t('.more')
+- when :media_object
+  - @collection.each do |resource|
+    = bootstrap_media_object(image_options: { src: resource.preview_picture&.image&.url(Ecm::Pictures.thumbnail_paperclip_style) }) do
+      %h4= resource.name
+      - if Ecm::Pictures::Configuration.prevent_textile_rendering_in_html
+        %notextile
+          %p= resource.description
+      - else
+        %p= resource.description
+      %p
+        = link_to ecm_pictures_engine.gallery_path(resource), class: 'btn btn-primary' do
+          = t('.more')

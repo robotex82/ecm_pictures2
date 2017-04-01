@@ -32,6 +32,18 @@ module Ecm
       mattr_accessor :render_gallery_index_as do
         :thumbnail
       end
+
+      mattr_accessor :render_picture_index_as do
+        :thumbnail
+      end
+
+      mattr_accessor :thumbnail_container_css_classes do
+        "col-sm-6 col-md-4"
+      end
+
+      mattr_accessor :thumbnail_paperclip_style do
+        :original
+      end
     end
   end
 end

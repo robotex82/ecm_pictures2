@@ -1,7 +1,10 @@
 require 'acts_as_list'
 require 'acts_as_markup'
 require 'friendly_id'
+require 'haml-rails'
 require 'paperclip'
+require 'route_translator'
+require 'twitter/bootstrap/components/rails'
 
 require 'ecm/pictures/engine'
 require 'ecm/pictures/configuration'
