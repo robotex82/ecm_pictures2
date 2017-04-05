@@ -11,18 +11,13 @@ module Ecm::PicturesHelper
     options = { preview_style: :thumb }.merge(options)
 
     gallery = Ecm::Pictures::Gallery.where(name: name.to_s).first
-    gallery_identifier = begin
-                           gallery.to_param
-                         rescue
-                           'missing'
-                         end
 
     if gallery.nil?
       content_tag(:div, class: 'warning missing gallery') do
         content_tag(:p, I18n.t('ecm.pictures.gallery.warnings.missing', name: name.to_s))
       end
     else
-      render gallery
+      render gallery, { view: self }
     end
 
   rescue Exception => e

@@ -1,0 +1,5 @@
+= bootstrap_responsive_media_object(image_options: { src: gallery.preview_picture.try(:url) }) do
+  %h4= gallery.name
+  = gallery.description.to_html.html_safe
+  = bootstrap_button(to: view.ecm_pictures.polymorphic_url(gallery, only_path: true), context: :primary) do
+    = t('.more')

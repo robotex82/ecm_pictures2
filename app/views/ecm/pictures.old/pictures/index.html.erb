@@ -1,9 +1,0 @@
-<h1><%= Ecm::Pictures::Picture.model_name.human(:count => :other) %></h1>
-
-<div class="row" data-target="#modal-gallery" data-toggle="modal-gallery">
-  <%= render @pictures %>
-</div>
-
-<div class="well page-actions">
-  <%= link_to(t('ecm.pictures.views.actions.back'), main_app.root_path, class: 'btn btn-default') %>
-</div>

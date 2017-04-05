@@ -17,7 +17,9 @@ de:
       gallery:
         warnings:
           missing: "Die Galerie %{name} wurde nicht gefunden."
-      galleries:
+      galleries: 
+        gallery:
+          more: 'Mehr'
         index:
           more: 'Mehr'
       views:

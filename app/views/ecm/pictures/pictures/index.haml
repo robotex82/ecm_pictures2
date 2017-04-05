@@ -2,7 +2,7 @@
 
 - case Ecm::Pictures::Configuration.render_picture_index_as
 - when :thumbnail
-  .row
+  .flex-row
     - @collection.each do |resource|
       = bootstrap_thumbnail(container_classes: Ecm::Pictures.thumbnail_container_css_classes, image_options: { src: resource&.image&.url(Ecm::Pictures.thumbnail_paperclip_style) }, link_options: { href: "#{resource.image.url}#{File.extname(resource.image_file_name).downcase}", :'data-gallery' => "gallery" }) do
         %h3= resource.name
@@ -12,7 +12,7 @@
         - else
           %p= resource.description
         %p
-          = link_to ecm_pictures_engine.picture_path(resource), class: 'btn btn-primary' do
+          = link_to ecm_pictures.picture_path(resource), class: 'btn btn-primary' do
             = t('.more')
 - when :media_object
   - @collection.each do |resource|
@@ -24,5 +24,5 @@
       - else
         %p= resource.description
       %p
-        = link_to ecm_pictures_engine.picture_path(resource), class: 'btn btn-primary' do
+        = link_to ecm_pictures.picture_path(resource), class: 'btn btn-primary' do
           = t('.more')

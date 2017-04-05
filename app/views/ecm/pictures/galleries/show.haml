@@ -11,5 +11,5 @@
         %p= picture.description
 
 = bootstrap_button_group do
-  = link_to Ecm::Pictures::Gallery.model_name.human(count: :other), ecm_pictures_engine.galleries_path, class: 'btn btn-primary'
+  = link_to Ecm::Pictures::Gallery.model_name.human(count: :other), ecm_pictures.galleries_path, class: 'btn btn-primary'
   = link_to t('ecm.pictures.views.actions.back'), :back, class: 'btn btn-default'

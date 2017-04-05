@@ -12,6 +12,5 @@
     %p= @resource.description
 
 .row
-  = bootstrap_button_group do
-    = link_to(@resource.gallery, @resource.gallery, class: 'btn btn-primary') if @resource.gallery.present?
-    = link_to t('.back'), :back, class: 'btn btn-default'
+  = bootstrap_button(to: :back, context: :default) do
+    = t('.back')
