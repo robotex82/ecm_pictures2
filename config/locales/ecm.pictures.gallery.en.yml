@@ -16,6 +16,3 @@ en:
         pictures_count: pictures
         position: position
         updated_at: updated at
-  routes:
-    ecm_pictures_galleries: picture-galleries
-

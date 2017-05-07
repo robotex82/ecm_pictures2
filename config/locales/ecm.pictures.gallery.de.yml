@@ -16,6 +16,3 @@ de:
         pictures_count: Bilder
         position: Position
         updated_at: Aktualisiert am
-  routes:
-    ecm_pictures_galleries: bildgalerien
-

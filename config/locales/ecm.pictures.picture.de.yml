@@ -23,6 +23,3 @@ de:
         preview_picture: Vorschau
         thumbnail: Vorschau
         updated_at: Aktualisiert am
-  routes:
-    ecm_pictures_pictures: bilder
-

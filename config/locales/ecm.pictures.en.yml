@@ -16,3 +16,7 @@ en:
       views:
         actions:
           back: 'Back'
+  routes:
+    ecm_pictures: pictures
+    galleries: galleries
+    pictures: pictures

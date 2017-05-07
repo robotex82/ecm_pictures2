@@ -22,6 +22,3 @@ en:
         preview_picture: preview
         thumbnail: thumbnail
         updated_at: updated at
-  routes:
-    ecm_pictures_pictures: pictures
-

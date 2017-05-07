@@ -1,5 +1,2 @@
   
-  # ECM Pictures Frontend Routing
-  localized do
-    Ecm::Pictures::Routing.routes(self)
-  end
+  mount Ecm::Pictures::Engine, at: '/'
