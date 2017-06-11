@@ -1,5 +1,5 @@
 # This migration comes from ecm_pictures_engine (originally 3)
-class CreateEcmPicturesAttachedPictures < ActiveRecord::Migration
+class CreateEcmPicturesAttachedPictures < ActiveRecord::Migration[4.2]
   def change
     create_table :ecm_pictures_attached_pictures do |t|
       t.references :ecm_pictures_picture

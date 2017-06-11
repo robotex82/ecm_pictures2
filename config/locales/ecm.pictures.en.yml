@@ -17,6 +17,6 @@ en:
         actions:
           back: 'Back'
   routes:
-    ecm_pictures: pictures
+    ecm_picture_engine: pictures
     galleries: galleries
     pictures: pictures

@@ -2,7 +2,7 @@ module Ecm
   module Pictures
     class Picture < ActiveRecord::Base
       # associations
-      belongs_to :gallery, counter_cache: true
+      belongs_to :gallery, optional: true
       has_many :attached_pictures, foreign_key: 'ecm_pictures_picture_id'
 
       # acts as list

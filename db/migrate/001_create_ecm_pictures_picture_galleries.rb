@@ -1,4 +1,4 @@
-class CreateEcmPicturesPictureGalleries < ActiveRecord::Migration
+class CreateEcmPicturesPictureGalleries < ActiveRecord::Migration[4.2]
   def change
     create_table :ecm_pictures_picture_galleries do |t|
       t.string :name
