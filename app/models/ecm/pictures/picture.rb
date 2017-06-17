@@ -28,6 +28,7 @@ module Ecm
 
       # validations
       validates :image, attachment_presence: true
+      validates :image, size: { in: 0..Ecm::Pictures.maximum_image_file_size } unless Ecm::Pictures.maximum_image_file_size.nil?
       # validates_attachment_presence :image
       validates_attachment :image, content_type: { content_type: /\Aimage\/.*\Z/ }
 

@@ -44,6 +44,10 @@ module Ecm
       mattr_accessor :thumbnail_paperclip_style do
         :original
       end
+
+      mattr_accessor :maximum_image_file_size do
+        nil
+      end
     end
   end
 end
