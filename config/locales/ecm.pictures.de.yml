@@ -29,3 +29,10 @@ de:
     ecm_picture_engine: bilder
     galleries: galerien
     pictures: bilder
+  activerecord:
+    errors:
+      models:
+        ecm/pictures/picture:
+          attributes:
+            image_file_size:
+              in_between: Die Dateigröße überschreitet das maximum von 1 Megabyte.
