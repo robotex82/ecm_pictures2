@@ -48,6 +48,10 @@ module Ecm
       mattr_accessor :maximum_image_file_size do
         nil
       end
+
+      mattr_accessor :pictureable_factory_name do
+        :post
+      end
     end
   end
 end
