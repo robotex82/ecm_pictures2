@@ -1,5 +1,5 @@
 module Ecm
   module Pictures
-    VERSION = '5.1.0'
+    VERSION = '6.0.0'.freeze
   end
 end
