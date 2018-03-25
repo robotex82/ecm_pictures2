@@ -15,11 +15,11 @@ module Ecm
       end
 
       def load_collection
-        @collection = resource_class.all
+        @collection = resource_class.published.all
       end
 
       def load_resource
-        @resource = resource_class.find(params[:id])
+        @resource = resource_class.published.find(params[:id])
       end
     end
   end

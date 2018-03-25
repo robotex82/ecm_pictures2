@@ -1,8 +1,8 @@
 %h1= @resource.name
 
 .row
-  - @resource.pictures.each do |picture|
-    = bootstrap_thumbnail(container_classes: Ecm::Pictures.thumbnail_container_css_classes, image_options: { src: picture.image.url(Ecm::Pictures.thumbnail_paperclip_style) }, link_options: { href: "#{picture.image.url}#{File.extname(picture.image_file_name).downcase}", :'data-gallery' => "gallery" }) do
+  - @resource.pictures.published.each do |picture|
+    = bootstrap_thumbnail(container_id: dom_id(picture), container_classes: Ecm::Pictures.thumbnail_container_css_classes, image_options: { src: picture.image.url(Ecm::Pictures.thumbnail_paperclip_style) }, link_options: { href: "#{picture.image.url}#{File.extname(picture.image_file_name).downcase}", :'data-gallery' => "gallery" }) do
       %h3= picture.name
       - if Ecm::Pictures::Configuration.prevent_textile_rendering_in_html
         %notextile

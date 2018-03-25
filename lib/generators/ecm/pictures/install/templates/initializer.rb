@@ -44,4 +44,10 @@ Ecm::Pictures.configure do |config|
   # Default: config.render_gallery_index_as = :media_object
   #
   config.render_gallery_index_as = :media_object
+
+  # Name of the factory to use to attach attached pictures to.
+  #
+  # default: config.pictureable_factory_name = :post
+  #
+  config.pictureable_factory_name = :post
 end

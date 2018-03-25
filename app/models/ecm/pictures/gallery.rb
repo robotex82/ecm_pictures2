@@ -3,7 +3,11 @@ module Ecm
     class Gallery < ActiveRecord::Base
       # associations
       has_many :pictures, -> { order :position },
-               dependent: :destroy
+               dependent: :destroy do
+        def published
+          where(proxy_association.reflection.klass.arel_table[:published_at].not_eq(nil))
+        end
+      end
 
       # attributes
       accepts_nested_attributes_for :pictures, allow_destroy: true
@@ -11,6 +15,9 @@ module Ecm
       # acts as list
       acts_as_list
       default_scope { order(:position) }
+
+      include ActsAsPublished::ActiveRecord
+      acts_as_published
 
       # acts as markup
       acts_as_markup language: :variable, columns: [:description]
@@ -51,7 +58,7 @@ module Ecm
       end
 
       def preview_picture
-        pictures.first
+        pictures.published.first
       end
 
       private

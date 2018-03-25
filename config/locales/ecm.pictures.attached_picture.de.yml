@@ -6,8 +6,12 @@ de:
         other: Verknüpfte Bilder
     attributes:
       ecm/pictures/attached_picture:
+        id: ID
         picture: Bild
+        picture_id: Bild
         pictureable: Verknüpft mit
+        pictureable_id: Verknüpft mit
+        pictureable_type: Verknüofungstyp
         created_at: Erstellt am
         updated_at: Aktualisiert am
   routes:

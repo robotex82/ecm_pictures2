@@ -6,20 +6,26 @@ de:
         other: Bilder
     attributes:
       ecm/pictures/picture:
-        created_at: Erstellt am
+        id: ID
         description: Beschreibung
         display_code: Anzeigecode
         display_code_for_erb: Anzeigecode (erb)
         display_code_for_textile: Anzeigecode (textile)
         image: Datei
+        image_content_type: Dateityp
         image_file: Datei
         image_file_name: Dateiname
         image_file_size: Größe
         image_fingerprint: Fingerabdruck
+        image_updated_at: Datei aktualisiert am
         markup_language: Markup Sprache
         name: Name
         gallery: Galerie
+        gallery_id: Galerie
         position: Position
         preview_picture: Vorschau
+        published_at: Veröffentlicht am
+        slug: Freundliche ID
         thumbnail: Vorschau
+        created_at: Erstellt am
         updated_at: Aktualisiert am

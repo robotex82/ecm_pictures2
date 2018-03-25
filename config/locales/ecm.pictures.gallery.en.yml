@@ -6,7 +6,7 @@ en:
         other: picture galleries
     attributes:
       ecm/pictures/gallery:
-        created_at: created at
+        id: ID
         description: description
         display_code_for_erb: display code (erb)
         link_images: link images
@@ -15,4 +15,7 @@ en:
         pictures: pictures
         pictures_count: pictures
         position: position
+        published_at: published at
+        slug: slug
+        created_at: created at
         updated_at: updated at

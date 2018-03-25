@@ -10,7 +10,7 @@ module Ecm::PicturesHelper
   def render_picture_gallery(name, options = {})
     options = { preview_style: :thumb }.merge(options)
 
-    gallery = Ecm::Pictures::Gallery.where(name: name.to_s).first
+    gallery = Ecm::Pictures::Gallery.published.where(name: name.to_s).first
 
     if gallery.nil?
       content_tag(:div, class: 'warning missing gallery') do
@@ -53,7 +53,7 @@ module Ecm::PicturesHelper
     img_css_class = options.delete(:img_css_class)
     plain         = options.delete(:plain)
 
-    picture = Ecm::Pictures::Picture.where(name: name.to_s).first
+    picture = Ecm::Pictures::Picture.published.where(name: name.to_s).first
 
     if picture.nil?
       return content_tag(:div, class: 'warning missing picture') do

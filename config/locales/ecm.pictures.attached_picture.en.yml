@@ -6,8 +6,12 @@ en:
         other: attached pictures
     attributes:
       ecm/pictures/attached_picture:
+        id: ID
         picture: picture
+        picture_id: picture
         pictureable: attached to
+        pictureable_id: attached to
+        pictureable_type: attached to type
         created_at: created at
         updated_at: updated at
   routes:

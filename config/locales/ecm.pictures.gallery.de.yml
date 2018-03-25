@@ -6,7 +6,7 @@ de:
         other: Bildgalerien
     attributes:
       ecm/pictures/gallery:
-        created_at: Erstellt am
+        id: ID
         description: Beschreibung
         display_code_for_erb: Anzeigecode (erb)
         link_images: Bilder verlinken
@@ -15,4 +15,7 @@ de:
         pictures: Bilder
         pictures_count: Bilder
         position: Position
+        published_at: Veröffentlicht am
+        slug: Freundliche ID
+        created_at: Erstellt am
         updated_at: Aktualisiert am

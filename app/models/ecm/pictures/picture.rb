@@ -11,6 +11,9 @@ module Ecm
       # acts as markup
       acts_as_markup language: :variable, columns: [:description, :description]
 
+      include ActsAsPublished::ActiveRecord
+      acts_as_published
+
       # callbacks
       after_initialize :set_defaults
       before_validation :set_name_from_image_file_name, if: proc { |p| (p.name.nil? || p.name.empty?) }

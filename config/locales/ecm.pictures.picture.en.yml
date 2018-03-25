@@ -6,19 +6,26 @@ en:
         other: pictures
     attributes:
       ecm/pictures/picture:
-        created_at: created at
+        id: ID
         description: description
         display_code: display code
         display_code_for_erb: display code (erb)
         display_code_for_textile: display code (textile)
+        image: image
+        image_content_type: image type
         image_file: image
         image_file_name: image filename
         image_file_size: image size
         image_fingerprint: image fingerprint
+        image_updated_at: image updated at
         markup_language: markup language
         name: name
         gallery: picture gallery
+        gallery_id: picture gallery
         position: position
         preview_picture: preview
+        published_at: published at
+        slug: slug
         thumbnail: thumbnail
+        created_at: created at
         updated_at: updated at
